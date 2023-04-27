@@ -77,9 +77,10 @@ if(!empty($_POST)){
       <select class="form-select" id="matiere" name="matiere">
       <option class="text-center" value="">---Selectionnez une matière---</option>
         <option value="coton">Coton</option>
-        <option value="synthetique">Synthétique</option>
-        <option value='lin'>Lin</option>
+        <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'synthethique') ? "selected" : ""; ?> value="synthetique">Synthétique</option>
+        <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'lin') ? "selected" : ""; ?> value='lin'>Lin</option>
       </select>
+    <small class="text-danger"><?= $error['matiere'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="couleur" class="form-label mt-4">Couleur</label>
@@ -89,6 +90,7 @@ if(!empty($_POST)){
         <option value="g">Vert</option>
         <option value='b'>Bleu</option>
       </select>
+    <small class="text-danger"><?= $error['couleur'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="taille" class="form-label mt-4">Taille</label>
@@ -98,6 +100,7 @@ if(!empty($_POST)){
         <option value="m">Medium</option>
         <option value='l'>Large</option>
       </select>
+    <small class="text-danger"><?= $error=['taille'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="genre" class="form-label mt-4">Genre</label>
@@ -107,6 +110,7 @@ if(!empty($_POST)){
         <option value="w">Femme</option>
         <option value='u'>Unisexe</option>
       </select>
+    <small class="text-danger"><?= $error['genre'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="type" class="form-label mt-4">Type</label>
@@ -116,11 +120,13 @@ if(!empty($_POST)){
         <option value="pantalon">pantalon</option>
         <option value='chaussure'>chaussure</option>
       </select>
+    <small class="text-danger"><?= $error['type'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="prix" class="form-label mt-4">Prix</label>
       <input class="form-control" type="number" min="0" step="0.01" id="prix" name="prix">
     </div>
+  <small class="text-danger"><?= $error['prix'] ?? ''; ?></small>
     
     <button type="submit" class="btn btn-primary">ajout produit</button>
   </fieldset>
