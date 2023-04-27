@@ -56,7 +56,8 @@ if(!empty($_POST)){
   <fieldset>
     <div class="form-group">
       <label for="titre" class="col-sm-2 col-form-label">titre</label>
-    <input type="text" class="form-control" id="titre" name="titre">
+    <input type="text" class="form-control" id="titre" name="titre" value="<?= $_POST['titre'] ?? ''; ?>">
+    <small class="text-danger"><?= $error['titre'] ?? ''; ?></small>
       
     </div>
 
@@ -65,9 +66,11 @@ if(!empty($_POST)){
       <select class="form-select" id="marque" name="marque">
         <option class="text-center" value="">---Selectionnez une marque---</option>
         <option value="adidas">Adidas</option>
-        <option value="Nike">Nike</option>
-        <option value='Maje'>Maje</option>
+        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'nike') ? "selected" : "" ; ?> value="Nike">Nike</option>
+        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'Maje') ? "selected" : "" ; ?> value='Maje'>Maje</option>
       </select>
+    <small class="text-danger"><?= $error['marque'] ?? ''; ?></small>
+
     </div>
     <div class="form-group">
       <label for="matiere" class="form-label mt-4">Matière</label>
