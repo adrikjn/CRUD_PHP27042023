@@ -1,4 +1,4 @@
-<?php require_once('init.inc.php.php')  ?>
+<?php require_once('init.inc.php')  ?>
 
 <!DOCTYPE html>
 <html lang="fr">
