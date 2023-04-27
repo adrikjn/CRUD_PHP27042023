@@ -42,6 +42,10 @@ if(!empty($_POST)){
 
         $resultat = $pdo->prepare($request);
         $resultat->execute($data);
+
+        $_SESSION['messages']['success'][''][] = 'Votre produit a bien été créé';
+        header('Location: ../index.php');
+        exit();
     }
 }
 ?>
