@@ -28,11 +28,11 @@ a mettre dans snipets html.json
 
 	"Header":{
 		"prefix": ["h"],
-		"body": ["<?php require_once('inclusion/header.inc.php'); ?>" ]
+		"body": ["<?php require_once('../inclusion/header.inc.php'); ?>" ]
 	},
 
 	"footer":{
 		"prefix": ["f"],
-		"body": ["<?php require_once('inclusion/footer.inc.php'); ?>" ]
+		"body": ["<?php require_once('../inclusion/footer.inc.php'); ?>" ]
 	},
 }
