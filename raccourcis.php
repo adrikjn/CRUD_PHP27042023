@@ -36,3 +36,8 @@ a mettre dans snipets html.json
 		"body": ["<?php require_once('../inclusion/footer.inc.php'); ?>" ]
 	},
 }
+
+
+bootswatch 
+
+https://cdnjs.com/libraries/bootswatch lien cdn 
