@@ -87,8 +87,8 @@ if(!empty($_POST)){
       <select class="form-select" id="couleur" name="couleur">
       <option class="text-center" value="">---Selectionnez une couleur---</option>
         <option value="r">Rouge</option>
-        <option value="g">Vert</option>
-        <option value='b'>Bleu</option>
+        <option <?= (isset($_POST['couleur']) && $_POST['couleur'] == "g" ? "selected" : ""); ?> value="g">Vert</option>
+        <option <?= (isset($_POST['couleur']) && $_POST['couleur'] == "b" ? "selected" : ""); ?> value='b'>Bleu</option>
       </select>
     <small class="text-danger"><?= $error['couleur'] ?? ''; ?></small>
     </div>
