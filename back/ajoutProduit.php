@@ -5,13 +5,11 @@
 <div class="container mt-3 p-3 border border-light rounded">
 
 
-<form method="post">
+<form class="p-5" method="post">
   <fieldset>
-    <div class="form-group row">
+    <div class="form-group">
       <label for="titre" class="col-sm-2 col-form-label">Titre</label>
-      <div class="col-sm-10">
-        <input type="text" readonly="" class="form-control-plaintext" id="titre" name="titre">
-      </div>
+        <input type="text"  class="form-control" id="titre" name="titre">
     </div>
   
     <div class="form-group">
@@ -76,7 +74,7 @@
       <input class="form-control" type="number" id="prix" min="0" step="0.01" name="prix">
     </div>
    
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
   </fieldset>
 </form>
 
