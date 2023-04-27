@@ -1,6 +1,10 @@
 <?php require_once('../inclusion/header.inc.php'); ?>
 
 <h1 class="text-center mt-5">Ajout produit</h1>
+
+<div class="container mt-3 border border-light">
+
+
 <form>
   <fieldset>
     <legend>Legend</legend>
@@ -106,6 +110,8 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>
+
+</div>
 
 <?php require_once('../inclusion/footer.inc.php'); ?>
 
