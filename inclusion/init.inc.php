@@ -25,3 +25,6 @@ function debug($var)
         var_dump($var);
     echo '</pre>';
 }
+
+// * Créer une fonction qui prend en paramètre un tableau de donnée et qui modifie les valeurs à l'aide de htmlspecialschars et les restocker.
+// * Et la fonction return se tableau
