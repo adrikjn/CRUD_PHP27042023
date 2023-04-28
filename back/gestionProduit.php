@@ -46,7 +46,7 @@ $produits = $resultat->fetchAll(PDO::FETCH_ASSOC);
           <td><?= $produit['prix']; ?></td>
           <td><?= $produit['type']; ?></td>
           <td><a href="" class="text-info  text-decoration-none">See</a>
-            <a href="" class="text-warning text-decoration-none">Update</a>
+            <a href="modifierProduit.php?id=<?= $produit['id_produit']; ?>" class="text-warning text-decoration-none">Update</a>
             <a href="" class="text-danger text-decoration-none">Delete</a>
           </td>
         </tr>
