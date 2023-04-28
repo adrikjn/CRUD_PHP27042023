@@ -1,5 +1,5 @@
 <?php require_once('../inclusion/header.inc.php'); ?>
-<!-- <?= debug($_POST); ?> -->
+<?= debug($_POST); ?>
 <?php
 if(!empty($_POST)){
     $error = [];
@@ -65,9 +65,9 @@ if(!empty($_POST)){
       <label for="marque" class="form-label mt-4">Marque</label>
       <select class="form-select" id="marque" name="marque">
         <option class="text-center" value="">---Selectionnez une marque---</option>
-        <option value="adidas">Adidas</option>
-        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'nike') ? "selected" : "" ; ?> value="Nike">Nike</option>
-        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'Maje') ? "selected" : "" ; ?> value='Maje'>Maje</option>
+        <option <?= (isset($_POST['marque']) && $_POST['marque'] == 'adidas') ? "selected" : ""; ?> value="adidas">Adidas</option>
+        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'nike') ? "selected" : "" ; ?> value="nike">Nike</option>
+        <option <?= (isset($_POST['marque']) && $_POST["marque"] == 'maje') ? "selected" : "" ; ?> value='maje'>Maje</option>
       </select>
     <small class="text-danger"><?= $error['marque'] ?? ''; ?></small>
 
@@ -76,8 +76,8 @@ if(!empty($_POST)){
       <label for="matiere" class="form-label mt-4">Matière</label>
       <select class="form-select" id="matiere" name="matiere">
       <option class="text-center" value="">---Selectionnez une matière---</option>
-        <option value="coton">Coton</option>
-        <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'synthethique') ? "selected" : ""; ?> value="synthetique">Synthétique</option>
+        <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'coton') ? "selected" : ""; ?> value="coton">Coton</option>
+        <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'synthetique') ? "selected" : ""; ?> value="synthetique">Synthétique</option>
         <option <?= (isset($_POST['matiere']) && $_POST['matiere'] == 'lin') ? "selected" : ""; ?> value='lin'>Lin</option>
       </select>
     <small class="text-danger"><?= $error['matiere'] ?? ''; ?></small>
@@ -86,7 +86,7 @@ if(!empty($_POST)){
       <label for="couleur" class="form-label mt-4">Couleur</label>
       <select class="form-select" id="couleur" name="couleur">
       <option class="text-center" value="">---Selectionnez une couleur---</option>
-        <option value="r">Rouge</option>
+        <option <?= (isset($_POST['couleur']) && $_POST['couleur'] == "r" ? "selected" : ""); ?> value="r">Rouge</option>
         <option <?= (isset($_POST['couleur']) && $_POST['couleur'] == "g" ? "selected" : ""); ?> value="g">Vert</option>
         <option <?= (isset($_POST['couleur']) && $_POST['couleur'] == "b" ? "selected" : ""); ?> value='b'>Bleu</option>
       </select>
@@ -96,19 +96,19 @@ if(!empty($_POST)){
       <label for="taille" class="form-label mt-4">Taille</label>
       <select class="form-select" id="taille" name="taille">
       <option class="text-center" value="">---Selectionnez une taille---</option>
-        <option value="s">Small</option>
-        <option value="m">Medium</option>
-        <option value='l'>Large</option>
+        <option <?= (isset($_POST['taille']) && $_POST['taille'] == "s" ? "selected" : ""); ?> value="s">Small</option>
+        <option <?= (isset($_POST['taille']) && $_POST['taille'] == "m" ? "selected" : ""); ?> value="m">Medium</option>
+        <option <?= (isset($_POST['taille']) && $_POST['taille'] == "l" ? "selected" : ""); ?> value='l'>Large</option>
       </select>
-    <small class="text-danger"><?= $error=['taille'] ?? ''; ?></small>
+    <small class="text-danger"><?= $error['taille'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="genre" class="form-label mt-4">Genre</label>
       <select class="form-select" id="genre" name="genre">
       <option class="text-center" value="">---Selectionnez un genre---</option>
-        <option value="m">Homme</option>
-        <option value="w">Femme</option>
-        <option value='u'>Unisexe</option>
+        <option <?= (isset($_POST['genre']) && $_POST['genre'] == "m" ? "selected" : ""); ?> value="m">Homme</option>
+        <option <?= (isset($_POST['genre']) && $_POST['genre'] == "w" ? "selected" : ""); ?> value="w">Femme</option>
+        <option <?= (isset($_POST['genre']) && $_POST['genre'] == "u" ? "selected" : ""); ?> value='u'>Unisexe</option>
       </select>
     <small class="text-danger"><?= $error['genre'] ?? ''; ?></small>
     </div>
@@ -116,15 +116,15 @@ if(!empty($_POST)){
       <label for="type" class="form-label mt-4">Type</label>
       <select class="form-select" id="type" name="type">
       <option class="text-center" value="">---Selectionnez un type---</option>
-        <option value="t-shirt">t-shirt</option>
-        <option value="pantalon">pantalon</option>
-        <option value='chaussure'>chaussure</option>
+        <option <?= (isset($_POST['type']) && $_POST['type'] == "t-shirt" ? "selected" : ""); ?> value="t-shirt">t-shirt</option>
+        <option <?= (isset($_POST['type']) && $_POST['type'] == "pantalon" ? "selected" : ""); ?> value="pantalon">pantalon</option>
+        <option <?= (isset($_POST['type']) && $_POST['type'] == "chaussure" ? "selected" : ""); ?> value='chaussure'>chaussure</option>
       </select>
     <small class="text-danger"><?= $error['type'] ?? ''; ?></small>
     </div>
     <div class="form-group">
       <label for="prix" class="form-label mt-4">Prix</label>
-      <input class="form-control" type="number" min="0" step="0.01" id="prix" name="prix">
+      <input class="form-control" type="number" min="0" step="0.01" id="prix" name="prix" value="<?= $_POST['prix'] ?? ''; ?>">
     </div>
   <small class="text-danger"><?= $error['prix'] ?? ''; ?></small>
     
