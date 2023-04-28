@@ -23,6 +23,8 @@ if (!empty($_POST)) {
             $error[$indice] = 'le champ ' . $indice . ' est obligatoire';
         }
     }
+    // ! Ici on a update le $produit par $_POST pour que si il y'a une erreure quelque part et qu'on corrige l'endroit on garde l'endroit modifié.
+    $produit = $_POST;
 
     if (!$error) {
         $request = "UPDATE  produit SET titre = :titre, marque = :marque, matiere = :matiere, couleur = :couleur, taille = :taille, genre = :genre, type = :type, prix = :prix WHERE id_produit = :id_produit";
@@ -37,13 +39,13 @@ if (!empty($_POST)) {
             'genre' => $_POST['genre'],
             'type' => $_POST['type'],
             'prix' => $_POST['prix'],
-            'id_produit' => $_GET['id']
+            'id_produit' => $produit['id_produit']
         ]; 
-    }
     $resultat = $pdo->prepare($request);
     $resultat->execute($data);
     header('Location: gestionProduit.php');
     exit();
+    }
 }
 
 
@@ -55,6 +57,8 @@ if (!empty($_POST)) {
 
 <div class="container mt-3 p-3 border border-light rounded">
     <form class="p-5" method="post">
+        <!-- si $id existe on met en value, en cas de problème sa reset pas  -->
+            <input type="hidden" name="id_produit" value="<?= $id ?? ""; ?>">
         <fieldset>
             <div class="form-group">
                 <label for="titre" class="col-sm-2 col-form-label">titre</label>
