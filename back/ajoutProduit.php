@@ -1,8 +1,12 @@
 <?php require_once('../inclusion/header.inc.php'); ?>
 <?= debug($_POST); ?>
 <?php
+// * On vérifie que le formulaire a été envoyé
 if(!empty($_POST)){
+  // * On crée un tableau vide pour le remplir des différentes erreurs si il y'en a 
     $error = [];
+    // * Ici on vérifie si que le champ titre (ou l'input de name titre) est vide (que l'utilisateur n'a pas saisie d'information)
+    // * Si c'est le cas alors on remplis notre tableau d'erreur avec l'indice titreet la valeur la dite erreur.
     if(empty($_POST['titre'])){
         $error['titre'] = "Le champs titre est obligatoire";
     }
@@ -27,8 +31,14 @@ if(!empty($_POST)){
     if(empty($_POST['prix'])){
         $error['prix'] = "vous devez choisir un prix";
     }
+
+    // * Cette condition on aurait pu mettre if(empty($error))
+    // * Une variable vide renvoie false, on veut envoyer nos informations en BDD si $error est vide. donc je dois mettre comme condition !error pour avoir vrai et rentrer dans le traitement.
     if(!$error){ //* ou empty($error)
+      // * Préparé la requête d'insertion avec nos marqueurs pour les VALUES
         $request = "INSERT INTO produit (titre, marque, matiere, couleur, taille, genre, type, prix) VALUES(:titre, :marque, :matiere, :couleur, :taille, :genre, :type, :prix)";
+
+        // * Préparé notre tableau de données à envoyer en BDD suivant les différents marqueurs de la requete (même ordre, ":" pas obligatoire)
         $data = [
             'titre' => $_POST['titre'],
             'marque' => $_POST['marque'],
@@ -43,12 +53,18 @@ if(!empty($_POST)){
         $resultat = $pdo->prepare($request);
         $resultat->execute($data);
 
+        // * Création d'un message de succès en session 
         $_SESSION['messages']['success'][''][] = 'Votre produit a bien été créé';
+
+        // * Redirigé vers la page d'accueil
         header('Location: ../index.php');
         exit();
     }
+
 }
+//* echo isset($var) ? $valeur_default MEME CHOSE QUE echo $var ?? $valeur_default;
 ?>
+
 <h1 class="text-center mt-5">Ajout produit</h1>
 
 <div class="container mt-3 p-3 border border-light rounded">
