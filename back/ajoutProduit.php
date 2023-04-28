@@ -54,7 +54,7 @@ if(!empty($_POST)){
         $resultat->execute($data);
 
         // * Création d'un message de succès en session 
-        $_SESSION['messages']['success'][''][] = 'Votre produit a bien été créé';
+        $_SESSION['messages']['success'][] = 'Votre produit a bien été créé';
 
         // * Redirigé vers la page d'accueil
         header('Location: ../index.php');
