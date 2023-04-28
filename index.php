@@ -17,10 +17,21 @@
         <!-- <?php debug($produit); ?> -->
         <div class="col-4 px-3">
         <div class="card border-primary mb-3">
-            <div class="card-header"><?= $produit['prix'] . "€"; ?></div>
+            <div class="card-header"><?= $produit['type']; ?></div>
             <div class="card-body">
-                <h4 class="card-title"><?= $produit['titre']; ?></h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4 class="card-title text-center"><?= $produit['titre']; ?></h4>
+                <div class="text-center">
+                    <img src="https://picsum.photos/200/200" alt="">
+                </div>
+                <h5 class="my-3">Details : </h5>
+                <p class="card-text">
+                    <ul>
+                        <li>Genre : <?= $produit['genre']; ?></li>
+                        <li>Taille : <?= strtoupper($produit['taille']); ?></li>
+                        <li>Matière : <?= $produit['matiere']; ?></li>
+
+                </ul>
+            </p>
             </div>
         </div>
         </div>
