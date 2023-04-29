@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/quartz/bootstrap.min.css" integrity="sha512-3qm29Ouc1OmoMoeJlbg5vEOYakc9MqIWAgDVuB/TJeuqFGftnZyE9S+AP+3TGeYIkPYt6CWz5JdiKkvcZ2qHPg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/vapor/bootstrap.min.css" integrity="sha512-f3fDhRxPxRct3q1hRKC9qEOkqNtlrNCktLDRAOpGFuQLezKoBDUCXPJrEa2VwQilrUj5f7SPx6asfwfKNNwkvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
