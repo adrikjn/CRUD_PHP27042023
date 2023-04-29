@@ -15,7 +15,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=crud_php',
                 )
 );
 //* constante qui définit la racine du projet
-define('BASE', '/CRUD_PHP/');
+define('BASE', '/CRUD_PHP27042023/');
 // changer ici le nom crud_php27042023 en fonction de si je suis à la ma ison ou à la formation
 
 //*fonction de debug
